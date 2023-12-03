@@ -1,2 +1,1 @@
-# AtividadesTypeScript
-Atividades Técnica de Programação
+# Atividade 3
