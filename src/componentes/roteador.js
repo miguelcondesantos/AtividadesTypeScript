@@ -6,6 +6,7 @@ import FormularioCadastroServicos from "./formulatioCadastroServicos";
 import ListaCliente from "./listaCliente";
 import ListaProduto from "./listaProduto";
 import ListaServico from "./listaServico";
+import Listagem from "./listagem";
 
 function Roteador() {
     const [tela, setTela] = useState('Clientes');
@@ -16,7 +17,7 @@ function Roteador() {
         setTela(novaTela);
     }
 
-    let barraNavegacao = <BarraNavegacao seletorView={selecionarView} tema="purple lighten-4" botoes={['Cadastro Clientes','Cadastro Servicos', 'Cadastro Produtos', 'Clientes', 'Servicos', 'Produtos' ]} />;
+    let barraNavegacao = <BarraNavegacao seletorView={selecionarView} tema="purple lighten-4" botoes={['Cadastro Clientes','Cadastro Servicos', 'Cadastro Produtos', 'Clientes', 'Servicos', 'Produtos', 'Listagem' ]} />;
     
     if (tela === 'Clientes') {
         return (
@@ -67,6 +68,15 @@ function Roteador() {
             <>
                 {barraNavegacao}
                 <FormularioCadastroServicos tema="purple lighten-4" />
+            </>
+        )
+    }
+
+    if (tela === "Listagem") {
+        return (
+            <>
+                {barraNavegacao}
+                <Listagem tema="purple lighten-4" />
             </>
         )
     }
